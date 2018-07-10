@@ -1,0 +1,371 @@
+@import "../mixin.less";
+@import "../color.less";
+@import "../prefixer.less";
+@import "../grid.less";
+
+.match{
+    margin-bottom: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 200;
+
+    &__header{
+        height: 40px;
+        width: 100%;
+        position: relative;
+        
+        .flex-block();
+
+        &_inplay{
+            background-color: @primaryColor4;
+    
+        }
+
+        &_early{
+            background-color:@tertiaryColor2;
+        }
+    }
+
+  
+   &__favPin{
+        width:40px;
+        height: 40px;
+
+   }
+
+   &__iconFavPin{
+       .icon();
+       height: 25px;
+       width: 25px;
+       position: absolute;
+       top:8px;
+       left: 8px;
+   }
+
+
+    &__iconFav{
+        .icon();
+        position: absolute;
+        top:10px;
+        left: 10px;
+        height: 17px;
+        width:17px;
+
+    }
+
+    &__info{
+        font-size: 12px;
+        .flex-block();
+        display: flex;
+        width: 78%;
+        position: relative
+    }
+
+    &__time{
+        margin-right: 5px;
+        line-height: 40px;
+        font-weight: bold;
+
+        &_inplay{
+            color:@tertiaryColor3;
+        }
+
+        &_early{
+            color:@primaryColor4;
+        }
+    }
+
+    &__neutral{
+        padding-top:13px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    &__iconNeutral{
+        .icon();
+        height: 14px;
+        width:14px;
+    }
+
+    &__ln{
+        line-height: 40px;
+        .ellipsis();
+        max-width: 65%;
+
+        &_inplay{
+            color:@tertiaryColor2;
+        }
+
+        &_early{
+            color:@secondaryColor3;
+        }
+    }
+
+   &__iconCombo{
+       .icon();
+       height: 17px;
+       width:17px;
+       position: absolute;
+       top:10px;
+       right:10px;
+       color:@warningColor1;
+   }
+   
+   &__moreMK{
+       position: absolute;
+       right:0px;
+       bottom:0px;
+       height: 40px;
+       width:40px;
+   }
+
+   &__iconMoreMK{
+       .icon();
+       height: 40px;
+       width:40px;
+       position: absolute;
+   }
+
+   &__actionBar{
+       position: absolute;
+       top:0px;
+       left: 0px;
+       width: 100%;
+       height: 40px;
+
+       &_inplay{
+           background-color: @primaryColor4;
+       }
+
+       &_early{
+           background-color: @tertiaryColor2;
+       }
+   }
+
+   &__actionClose{
+        width:40px;
+        height: 100%;
+        background-color:@tertiaryColor3;
+        float:left;
+   }
+
+   &__iconActionClose{
+       .icon();
+       height: 40px;
+       width: 40px;
+       position: absolute;
+       color:@primaryColor4;
+   }
+
+   &__actionFavPin{
+       font-size: 12px;
+       .flex-block();
+       width:78%;
+       position: relative;
+       float: left;
+       height: 40px;
+   }
+
+   &__actionFav{
+       width:50%;
+       padding-left: 10px;
+       .flex-block();
+       .align-items-center();
+   }
+
+   &__iconActionFav{
+       .icon();
+       height: 20px;
+       width:20px;
+
+   }
+
+   &__textActionBar{
+       padding-left: 5px;
+
+        &_inplay{
+            color: @tertiaryColor2;
+        }
+
+        &_early{
+            color:@secondaryColor0;
+        }
+   }
+
+   &__actionPin{
+      width:50%;
+      padding-left: 10px;
+      .flex-block();
+      .align-items-center();
+      border-left:1px @primaryColor1 solid;
+   }
+
+   &__iconActionPin{
+       .icon();
+       height: 20px;
+       width: 20px;
+   }
+
+}
+
+.matchInfo{
+    &__arrScore{
+        text-align: right;
+        min-width: 24px;
+        font-size: 14px;
+
+        &_fisrt{
+            color:@warningColor1;
+        }
+        &_others{
+            color:@tertiaryColor3;
+
+        }
+        &_last{
+            font-weight: bold;
+        }
+    }
+
+    &__score{
+        text-align: right;
+        color:@warningColor1;
+        font-size: 14px;
+        min-width: 24px;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+
+    &__matchScore{
+        width: calc(100% - 165px);
+        font-size: 14px;
+        .flex-block();
+
+        &_firstRow{
+            color:@tertiaryColor2;
+        }
+       &_othersRow{
+           color:@secondaryColor3;
+       } 
+    }
+
+    &__serving{
+        .flex-block();
+    }
+
+    &__servingArea{
+        min-width: 8px;
+        position: relative;
+    }
+
+    &__servingBall{
+        position: absolute;
+        top:22px;
+        left: 0px;
+        height: 5px;
+        width: 5px;
+        background-color: @warningColor1;
+        border-radius: 50px;
+    }
+
+
+    &__tnameArea{
+        width:100%;
+        height: 50px;
+        position: relative;
+        .flex-block();
+        .align-items-center();
+    }
+
+    &__tnameText{
+        max-height: 50px;
+        width:100%;
+        overflow:hidden;
+    }
+
+    &__tnameFadeOut{
+        position: absolute;
+        height: 10px;
+        width: 100%;
+        bottom: 0px;
+        right:0px;
+        opacity: 0.5;
+        background-color: @secondaryColor0;
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
+        background: -webkit-linear-gradient(rgba(255, 255, 255, 0), white);
+        background: -o-linear-gradient(rgba(255, 255, 255, 0), white);
+        background: linear-gradient(rgba(255, 255, 255, 0), white);
+
+    }
+
+    &__inplayFirstRow{
+        text-align: right;
+        padding-right: 5px;
+        padding-top: 16px;
+        .flex-block();
+        width:55px;
+    }
+
+    &__redCard{
+       float: left;
+       height: 16px;
+       margin-left: 0px;
+       margin-right: auto;
+    }
+}
+
+.matchContent{
+
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    background-color: @secondaryColor0;
+
+    &__firstMK{
+        padding-top: 10px;
+    }
+
+    &__othersMK{
+        padding-top: 5px;
+    }
+
+    &__row{
+        .flex-block();
+        height: 50px;
+
+        &_notLast{
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.selsContent{
+    width:165px;
+    overflow: hidden;
+
+    &__transition{
+        width: 340px;
+        .row();
+    }
+
+    &__slideTransition{
+        height: 50px;
+        .col-3();
+        padding-right: 5px;
+    }
+}
+
+
+
+.redCard{
+    display: inline-block;
+    min-width: 5px;
+    min-height: 6px;
+    padding: 3px 5px;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: @warningColor1;
+    font-size: 12px;
+}
